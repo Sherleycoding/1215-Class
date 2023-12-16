@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1215_Lab</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: lightgray;
+        }
+
+        h1 {
+            margin-bottom: 5px; /* Adjust margin as needed */
+        }
+
+        h5 { margin-bottom: 50px; }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+        }
+
+        .button {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #button1 {
+            background-color: saddlebrown;
+            color: #fff;
+        }
+
+        #button2 {
+            background-color: darkred;
+            color: #fff;
+        }
+
+        #button3 {
+            background-color: Blue;
+            color: #fff;
+        }
+
+        #button4 {
+            background-color: Green;
+            color: #fff;
+        }
+
+        
+        #resetButton {
+            background-color: orange;
+            color: #fff;
+        }
+
+        .button:hover,
+        #resetButton:hover {
+            transform: scale(1.1);
+
+        #changeColorButton {
+            background-color: lightblue;
+            color: #fff;
+        }
+
+        .button:hover,
+        #changeColorButton:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>1215_Lab_111305048</h1>
+    <h5> Click the Button 1 to display your first number and the Button 2 to display your second number </h5>
+
+    <div class="button-container">
+        <button class="button" id="button1" onclick="displayNumber1();">Button 1</button>
+        <button class="button" id="button2" onclick="displayNumber2();">Button 2</button>
+        <button class="button" id="button3" onclick="alert('Change to BLUE background color');
+        document.body.style.backgroundColor='Blue';">Blue</button>
+        <button class="button" id="button4" onclick="alert('Change to GREEN background color');
+        document.body.style.backgroundColor='Green';">Green</button>
+        <button class="button" id="resetButton" onclick="alert('Reset backgroundColor'); document.body.style.backgroundColor = 'lightgray';">Reset BG color</button>
+    </div>
+
+<script>
+   
+    var num1 = parseFloat (prompt("Enter the first number:"));
+        var num2 = parseFloat (prompt("Enter the second number:"));
+
+         function displayNumber1() {
+            alert('Number 1 = ' + num1);
+        }
+
+        function displayNumber2() {
+            alert('Number 2 = ' + num2);
+        }
+
+        if (!isNaN(num1) && !isNaN(num2)) {
+            if (num1 > num2) {
+                document.body.style.backgroundColor = 'lightblue';
+                document.write('<p style="color: darkblue;">Number 1 > Number 2</p>');
+            } else if (num2 > num1) {
+                document.body.style.backgroundColor = 'orange';
+                document.write('<p style="color: darkblue;">Number 2 > Number 1</p>');
+            } else {
+                document.body.style.backgroundColor = 'lightyellow';
+                document.write('<p style="color: darkblue;">Number 1 == Number 2</p>');
+            }
+        } else {
+            alert('Invalid input. Please enter valid numbers.');
+        }
+</script>
+
+</body>
+</html>
